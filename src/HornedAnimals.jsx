@@ -2,18 +2,16 @@ import React from "react";
 
 class HornedAnimals extends React.Component {
   render() {
-    console.log(this.props.title);
     return (
       <>
 
-        <article>
-          {/* <h2>{this.props.title}</h2>
-          <p>{this.props.desc}</p> */}
-        </article>
+        <h2>{this.props.title}</h2>
+        <p>{this.props.desc}</p>
+        <img src={this.props.img} alt={this.props.title} />
 
-      </>
-    );
+        </>
+        );
   }
 }
 
-export default HornedAnimals;
+        export default HornedAnimals;

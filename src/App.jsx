@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Header from './Header.jsx';
 import Footer from './Footer'
-import Main from './MainBody.jsx';
+import Main from './HornedAnimals';
 
 class App extends React.Component {
 

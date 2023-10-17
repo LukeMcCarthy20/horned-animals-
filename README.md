@@ -43,3 +43,14 @@ List versioned releases.
 ## Collaborators
 
 List collaborators here.
+
+ # 1: Display Images
+ Number and name of feature: #1 images
+
+Estimate of time needed to complete: 30 min
+
+Start time: 2:20
+
+Finish time: 2:34
+
+Actual time needed to complete: 14 min

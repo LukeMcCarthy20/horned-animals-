@@ -44,7 +44,7 @@ List versioned releases.
 
 List collaborators here.
 
- # 1: Display Images
+ # 1: Time stats
  Number and name of feature: #1 images
 
 Estimate of time needed to complete: 30 min
@@ -54,3 +54,27 @@ Start time: 2:20
 Finish time: 2:34
 
 Actual time needed to complete: 14 min
+
+---
+
+ Number and name of feature: #2 Favoriting Animals
+
+Estimate of time needed to complete: An hour
+
+Start time: 2:55
+
+Finish time: 3:10
+
+Actual time needed to complete: 15 min
+
+---
+
+ Number and name of feature: #3 BootStrap
+
+Estimate of time needed to complete: ???
+
+Start time:
+
+Finish time:
+
+Actual time needed to complete:

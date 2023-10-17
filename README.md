@@ -1,8 +1,45 @@
-# React + Vite
+# Horned Animals
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Lab 1: react assignment: Display animals, title and desc.
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Requirements
+
+For development, you will only need [Node](http://nodejs.org/) installed in your environment.
+Please use the appropriate [Editorconfig](http://editorconfig.org/) plugin for your Editor (not mandatory).
+
+### Install
+
+    git clone https://github.com/ORG/PROJECT.git
+    cd PROJECT
+    npm install
+
+### Configure app
+
+Any environment configuration steps.
+
+### Start & watch
+
+    npm run dev
+    npm start
+
+### Simple build for production
+
+    npm run build
+
+## Architecture
+
+Structed with a bunch of jsx files that all connect through importing and exporting 
+
+### Languages & tools
+
+react
+
+## Change Log
+
+List versioned releases.
+
+## Collaborators
+
+List collaborators here.

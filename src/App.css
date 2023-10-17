@@ -28,3 +28,15 @@ img {
   background-color: aqua;
   text-align: center;
 }
+
+.heart{
+  font-size: 3em;
+  position: absolute;
+  margin-top: -2%;
+
+}
+
+.favorites {
+  font-size: 2em;
+  color: aqua;
+}

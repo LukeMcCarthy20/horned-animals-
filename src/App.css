@@ -13,19 +13,18 @@ h2 {
   background-color: aliceblue;
 }
 
-p {
+#desc {
   text-align: center;
+  color: aqua;
 }
 
 img {
-  margin-left: 27%;
-
-}
-
-p {
-  color: aqua;
+  margin-left: 35%;
+  width: 425px;
+  height: 250px;
 }
 
 #footer{
   background-color: aqua;
+  text-align: center;
 }

@@ -1,26 +1,23 @@
 import React from "react";
 import HornedAnimals from "./HornedAnimals.jsx";
+import data from "./data.json";
 
 
 class Gallery extends React.Component {
   render() {
+    console.log(data);
+    let animals = [];
+    data.forEach((newAnimal, index) => {
+      animals.push(<HornedAnimals   title={newAnimal.title} desc={newAnimal.description} img={newAnimal.image_url} key={index}/>)
+    })
+
     return (
       <>
-        <HornedAnimals
-          title="Horned Animals"
-          desc="Animals with horns"
-          img="http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg"
-        />
-        <HornedAnimals
-          title="Horned Animals"
-          desc="Animals with horns"
-          img="http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg"
-        />
-
-
+        <main>{animals}</main>
       </>
     );
   }
+ 
 }
 
 export default Gallery;

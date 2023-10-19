@@ -1,44 +1,52 @@
 import React from "react";
+import { Card, Button, Col } from "react-bootstrap";
+import "./App.css";
 
 class HornedAnimals extends React.Component {
-
-
   constructor(props) {
     super(props);
     this.state = {
       favorites: 0,
+      animalNeeded: false,
     };
   }
 
+  handleLikes = () => {
+    this.setState({
+      favorites: this.state.favorites + 1,
+    });
+  };
 
-    handleFavorites = () => {
-      console.log('handle the favorite');
-      this.setState({
-        favorites: this.state.favorites + 1,
-      });
-    };
-
-    handleImage = () => {
-      this.handleFavorites();
-    }
+  handleAnimalClick = () => {
+    this.props.handleOnShowModal(this.props.title);
+  };
 
 
 
 
+  render() {
+    return (
+      <Col>
+        <Card className="h-100 p-3" >
+          <Card.Body>
+            <Card.Title onClick={this.handleAnimalClick}>{this.props.title}</Card.Title>
 
-    render() {
-      return (
-        <>
+            <Card.Img
+              variant="top"
+              src={this.props.img}
+              alt={this.props.title}
+              title={this.props.title}
+              onClick={this.handleAnimalClick}
+            />
 
-          <h2>{this.props.title}</h2>
-          <p className="favorites">{this.state.favorites} favorites</p>
-          <p onClick={this.handleFavorites} className="heart">❤️</p>
-          <p id="desc">{this.props.desc}</p>
-          <img src={this.props.img} alt={this.props.title} onClick={this.handleImage} />
-
-        </>
-      );
-    }
+            <h3>{this.props.title}</h3>
+            <p>{this.state.favorites} Likes</p>
+            <p onClick={this.handleLikes}>Click to favorite the animal!</p>
+          </Card.Body>
+        </Card>
+      </Col>
+    );
   }
+}
 
-        export default HornedAnimals;
+export default HornedAnimals;

@@ -4,7 +4,7 @@ import Header from "./Header.jsx";
 import Footer from "./Footer";
 import Gallery from "./Gallery";
 import data from "./data.json";
-import Modal from "react-bootstrap/Modal";
+import SelectedBeast from "./SelectedBeast";
 
 class App extends React.Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class App extends React.Component {
   }
 
   addAnimal = () => {
-    console.log('hearts');
+    console.log("hearts");
     this.setState({
       animal: this.state.animal + "❤️",
     });
@@ -37,7 +37,6 @@ class App extends React.Component {
   };
 
   render() {
-
     // console.log(this.state.animal);
     return (
       <>
@@ -50,14 +49,22 @@ class App extends React.Component {
         />
         <Footer />
 
-        <Modal show={this.state.showModal} onHide={this.handleOnHide}>
-          <Modal.Header closeButton>
-            <Modal.Title>{this.state.selectAnimal}</Modal.Title>
-          </Modal.Header>
-        </Modal>
+        <SelectedBeast 
+          showModal={this.state.showModal}
+          handleOnHide={this.handleOnHide}
+          selectAnimal={this.state.selectAnimal}
+        />
       </>
     );
   }
 }
 
 export default App;
+
+
+
+{/* <Modal show={this.state.showModal} onHide={this.handleOnHide}>
+<Modal.Header closeButton>
+  <Modal.Title>{this.state.selectAnimal}</Modal.Title>
+</Modal.Header>
+</Modal> */}

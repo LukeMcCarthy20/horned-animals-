@@ -5,6 +5,7 @@ import Row from "react-bootstrap/Row";
 
 
 class Gallery extends React.Component {
+  
   render() {
   let animals = this.props.data.map((newAnimal, index) => (
    <HornedAnimals   

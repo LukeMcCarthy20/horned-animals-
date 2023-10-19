@@ -17,14 +17,15 @@ class HornedAnimals extends React.Component {
   };
 
   handleAnimalClick = () => {
-    this.props.handleOnShowModal(this.props.title);
+    // console.log(this.props.title, this.props.img, this.props.description);
+    this.props.handleOnShowModal(this.props.title, this.props.img, this.props.description);
   };
 
 
 
 
   render() {
-    // console.log('add animal',this.props.addAnimal);
+    // console.log('animal props',this.props);
 
     return (
       <Col>

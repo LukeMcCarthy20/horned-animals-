@@ -8,7 +8,7 @@ class Gallery extends React.Component {
     let animals = this.props.data.map((newAnimal, index) => (
       <HornedAnimals
         title={newAnimal.title}
-        desc={newAnimal.description}
+        description={newAnimal.description}
         img={newAnimal.image_url}
         addAnimal={this.props.addAnimal}
         key={index}

@@ -12,7 +12,9 @@ class App extends React.Component {
     this.state = {
       animal: "",
       showModal: false,
-      selectAnimal: "",
+      selectAnimalTitle: '',
+      selectAnimalImg: '',
+      selectAnimaldescription: ''
     };
   }
 
@@ -29,15 +31,17 @@ class App extends React.Component {
     });
   };
 
-  handleOnShowModal = (animalTitle) => {
+  handleOnShowModal = (title, img, description) => {
+    // console.log('TID!',title, img, description);
     this.setState({
       showModal: true,
-      selectAnimal: animalTitle,
+      selectAnimalTitle: title,
+      selectAnimalImg: img,
+      selectAnimaldescription: description
     });
   };
 
   render() {
-    // console.log(this.state.animal);
     return (
       <>
         <Header animals={this.state.animal} />
@@ -52,7 +56,9 @@ class App extends React.Component {
         <SelectedBeast 
           showModal={this.state.showModal}
           handleOnHide={this.handleOnHide}
-          selectAnimal={this.state.selectAnimal}
+          selectAnimalTitle={this.state.selectAnimalTitle}
+          selectAnimalImg={this.state.selectAnimalImg}
+          selectAnimaldescription={this.state.selectAnimaldescription}
         />
       </>
     );

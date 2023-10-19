@@ -9,11 +9,16 @@ class SelectedBeast extends React.Component {
     //here we need props because the showModal lives in the App, so now our =>() is prop
     // update our handleOnHide lives in the App as well. so it is a prop here of the app.jsx
     // console.log('selected beast ',this.props);
+   
     return (
       <>
         <Modal show={this.props.showModal} onHide={this.props.handleOnHide}>
           <Modal.Header closeButton>
-            <Modal.Title>{this.props.selectAnimal}</Modal.Title>
+            <Modal.Title>{this.props.selectAnimalTitle}</Modal.Title>
+            {/* image  */}
+            <img src={this.props.selectAnimalImg} alt={this.props.selectAnimalTitle}/>
+            {/* description  */}
+            {/* selectAnimaldescription */}
           </Modal.Header>
         </Modal>
       </>

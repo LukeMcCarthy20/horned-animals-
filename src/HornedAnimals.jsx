@@ -1,7 +1,6 @@
 import React from "react";
-import { Card, Button, Col } from "react-bootstrap";
+import { Card, Col } from "react-bootstrap";
 import "./App.css";
-
 class HornedAnimals extends React.Component {
   constructor(props) {
     super(props);
@@ -18,18 +17,21 @@ class HornedAnimals extends React.Component {
   };
 
   handleAnimalClick = () => {
-    this.props.handleOnShowModal(this.props.title);
+    // console.log(this.props.title, this.props.img, this.props.description);
+    this.props.handleOnShowModal(this.props.title, this.props.img, this.props.description);
   };
 
 
 
 
   render() {
+    // console.log('animal props',this.props);
+
     return (
       <Col>
         <Card className="h-100 p-3" >
           <Card.Body>
-            <Card.Title onClick={this.handleAnimalClick}>{this.props.title}</Card.Title>
+            <Card.Title onClick={this.props.addAnimal}>{this.props.title}</Card.Title>
 
             <Card.Img
               variant="top"

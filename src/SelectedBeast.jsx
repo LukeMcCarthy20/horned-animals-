@@ -14,7 +14,6 @@ class SelectedBeast extends React.Component {
             <Modal.Title>{this.state.selectAnimal}</Modal.Title>
           </Modal.Header>
         </Modal>
-
       </>
 
     )

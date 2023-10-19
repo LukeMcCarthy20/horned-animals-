@@ -1,7 +1,6 @@
 import React from "react";
-import { Card, Button, Col } from "react-bootstrap";
+import { Card, Col } from "react-bootstrap";
 import "./App.css";
-
 class HornedAnimals extends React.Component {
   constructor(props) {
     super(props);
@@ -25,11 +24,13 @@ class HornedAnimals extends React.Component {
 
 
   render() {
+    // console.log('add animal',this.props.addAnimal);
+
     return (
       <Col>
         <Card className="h-100 p-3" >
           <Card.Body>
-            <Card.Title onClick={this.handleAnimalClick}>{this.props.title}</Card.Title>
+            <Card.Title onClick={this.props.addAnimal}>{this.props.title}</Card.Title>
 
             <Card.Img
               variant="top"

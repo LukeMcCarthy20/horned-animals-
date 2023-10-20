@@ -5,6 +5,9 @@ import Footer from "./Footer";
 import Gallery from "./Gallery";
 import data from "./data.json";
 import SelectedBeast from "./SelectedBeast";
+import ListGroup from "react-bootstrap/ListGroup";
+import {ListGroupItem } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
 
 class App extends React.Component {
   constructor(props) {
@@ -14,7 +17,8 @@ class App extends React.Component {
       showModal: false,
       selectAnimalTitle: '',
       selectAnimalImg: '',
-      selectAnimaldescription: ''
+      selectAnimaldescription: '',
+      sortedData: data,
     };
   }
 
@@ -40,10 +44,38 @@ class App extends React.Component {
       selectAnimaldescription: description
     });
   };
+handleSelect = (event) => {
+  let selected = event.target.value;
+  if (selected === 'even') {
+    let newData = data.filter((animal) => animal.horns % 2 === 0);
+    this.setState({ sortedData: newData });
+  } else if (selected === 'odd') {
+    let newData = data.filter((animal) => animal.horns % 2 !== 0);
+    this.setState({ sortedData: newData });
+  } else {
+    this.setState({ sortedData: data });
+  }
+};
 
   render() {
+    let numbers = this.state.sortedData.map((number, index) => {
+      return <ListGroupItem key={index} >{number}</ListGroupItem>
+    });
     return (
       <>
+
+        <section>
+        <ListGroup>{numbers}</ListGroup>
+        </section>
+
+        <Form>
+          <p>Selected Horns</p>
+          <Form.Select name="selected" onChange={this.handleSelect}>
+            <option value="all">All</option>
+            <option value="even">Even</option>
+            <option value="odd">Odd</option>
+          </Form.Select>
+        </Form>
         <Header animals={this.state.animal} />
 
         <Gallery
@@ -53,7 +85,7 @@ class App extends React.Component {
         />
         <Footer />
 
-        <SelectedBeast 
+        <SelectedBeast
           showModal={this.state.showModal}
           handleOnHide={this.handleOnHide}
           selectAnimalTitle={this.state.selectAnimalTitle}

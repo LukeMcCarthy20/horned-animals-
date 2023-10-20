@@ -81,7 +81,7 @@ class App extends React.Component {
 
 
         <Gallery
-          data={data}
+          data={this.state.sortedData}
           addAnimal={this.addAnimal}
           handleOnShowModal={this.handleOnShowModal}
         />

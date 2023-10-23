@@ -7,7 +7,6 @@ import data from "./data.json";
 import SelectedBeast from "./SelectedBeast";
 import Form from 'react-bootstrap/Form'
 
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -43,7 +42,6 @@ class App extends React.Component {
       selectAnimaldescription: description
     });
   };
-
   handleSelect = (event) => {
     let selected = event.target.value;
     if (selected === "1") {
@@ -64,25 +62,10 @@ class App extends React.Component {
     }
   };
 
+
   render() {
-    let numbers = this.state.sortedData.map((number, index) => {
-      return <ListGroupItem key={index} >{number}</ListGroupItem>
-    });
     return (
       <>
-
-        <section>
-        <ListGroup>{numbers}</ListGroup>
-        </section>
-
-        <Form>
-          <p>Selected Horns</p>
-          <Form.Select name="selected" onChange={this.handleSelect}>
-            <option value="all">All</option>
-            <option value="even">Even</option>
-            <option value="odd">Odd</option>
-          </Form.Select>
-        </Form>
         <Header animals={this.state.animal} />
         <Form>
           <Form.Select

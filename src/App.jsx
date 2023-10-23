@@ -5,9 +5,9 @@ import Footer from "./Footer";
 import Gallery from "./Gallery";
 import data from "./data.json";
 import SelectedBeast from "./SelectedBeast";
-import ListGroup from "react-bootstrap/ListGroup";
-import {ListGroupItem } from "react-bootstrap";
-import Form from "react-bootstrap/Form";
+
+import Form from 'react-bootstrap/Form'
+
 
 class App extends React.Component {
   constructor(props) {
@@ -44,18 +44,26 @@ class App extends React.Component {
       selectAnimaldescription: description
     });
   };
-handleSelect = (event) => {
-  let selected = event.target.value;
-  if (selected === 'even') {
-    let newData = data.filter((animal) => animal.horns % 2 === 0);
-    this.setState({ sortedData: newData });
-  } else if (selected === 'odd') {
-    let newData = data.filter((animal) => animal.horns % 2 !== 0);
-    this.setState({ sortedData: newData });
-  } else {
-    this.setState({ sortedData: data });
-  }
-};
+
+  handleSelect = (event) => {
+    let selected = event.target.value;
+    if (selected === "1") {
+      let filteredChoice = data.filter(item => item.horns === 1);
+      this.setState({ sortedData: filteredChoice });
+    } else if (selected === "2") {
+      let filteredChoice = data.filter(item => item.horns === 2);
+      this.setState({ sortedData: filteredChoice });
+    } else if (selected === "3") {
+      let filteredChoice = data.filter(item => item.horns === 3);
+      this.setState({ sortedData: filteredChoice });
+    } else if (selected === "100") {
+      let filteredChoice = data.filter(item => item.horns === 100);
+      this.setState({ sortedData: filteredChoice });
+    } else {
+      this.setState({ sortedData: data });
+
+    }
+  };
 
   render() {
     let numbers = this.state.sortedData.map((number, index) => {
@@ -77,9 +85,21 @@ handleSelect = (event) => {
           </Form.Select>
         </Form>
         <Header animals={this.state.animal} />
+        <Form>
+          <Form.Select
+            name="selected"
+            onChange={this.handleSelect}>
+            <option>Choose Number Of Animal Horns</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+            <option value="100">One Hundred</option>
+          </Form.Select>
+        </Form>
+
 
         <Gallery
-          data={data}
+          data={this.state.sortedData}
           addAnimal={this.addAnimal}
           handleOnShowModal={this.handleOnShowModal}
         />
@@ -98,11 +118,3 @@ handleSelect = (event) => {
 }
 
 export default App;
-
-
-
-{/* <Modal show={this.state.showModal} onHide={this.handleOnHide}>
-<Modal.Header closeButton>
-  <Modal.Title>{this.state.selectAnimal}</Modal.Title>
-</Modal.Header>
-</Modal> */}

@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import Gallery from "./Gallery";
 import data from "./data.json";
 import SelectedBeast from "./SelectedBeast";
+import Form from 'react-bootstrap/Form'
 
 class App extends React.Component {
   constructor(props) {
@@ -14,7 +15,8 @@ class App extends React.Component {
       showModal: false,
       selectAnimalTitle: '',
       selectAnimalImg: '',
-      selectAnimaldescription: ''
+      selectAnimaldescription: '',
+      sortedData: data,
     };
   }
 
@@ -40,20 +42,52 @@ class App extends React.Component {
       selectAnimaldescription: description
     });
   };
+  handleSelect = (event) => {
+    let selected = event.target.value;
+    if (selected === "1") {
+      let filteredChoice = data.filter(item => item.horns === 1);
+      this.setState({ sortedData: filteredChoice });
+    } else if (selected === "2") {
+      let filteredChoice = data.filter(item => item.horns === 2);
+      this.setState({ sortedData: filteredChoice });
+    } else if (selected === "3") {
+      let filteredChoice = data.filter(item => item.horns === 3);
+      this.setState({ sortedData: filteredChoice });
+    } else if (selected === "100") {
+      let filteredChoice = data.filter(item => item.horns === 100);
+      this.setState({ sortedData: filteredChoice });
+    } else {
+      this.setState({ sortedData: data });
+
+    }
+  };
+
 
   render() {
     return (
       <>
         <Header animals={this.state.animal} />
+        <Form>
+          <Form.Select
+            name="selected"
+            onChange={this.handleSelect}>
+            <option>Choose Number Of Animal Horns</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+            <option value="100">One Hundred</option>
+          </Form.Select>
+        </Form>
+
 
         <Gallery
-          data={data}
+          data={this.state.sortedData}
           addAnimal={this.addAnimal}
           handleOnShowModal={this.handleOnShowModal}
         />
         <Footer />
 
-        <SelectedBeast 
+        <SelectedBeast
           showModal={this.state.showModal}
           handleOnHide={this.handleOnHide}
           selectAnimalTitle={this.state.selectAnimalTitle}
@@ -66,11 +100,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-
-
-{/* <Modal show={this.state.showModal} onHide={this.handleOnHide}>
-<Modal.Header closeButton>
-  <Modal.Title>{this.state.selectAnimal}</Modal.Title>
-</Modal.Header>
-</Modal> */}

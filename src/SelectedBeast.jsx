@@ -18,7 +18,6 @@ class SelectedBeast extends React.Component {
             {/* image  */}
             <img src={this.props.selectAnimalImg} alt={this.props.selectAnimalTitle}/>
             {/* description  */}
-            <p>{this.props.selectAnimaldescription}</p>
             {/* selectAnimaldescription */}
           </Modal.Header>
         </Modal>

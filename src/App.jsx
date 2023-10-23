@@ -5,7 +5,6 @@ import Footer from "./Footer";
 import Gallery from "./Gallery";
 import data from "./data.json";
 import SelectedBeast from "./SelectedBeast";
-
 import Form from 'react-bootstrap/Form'
 
 

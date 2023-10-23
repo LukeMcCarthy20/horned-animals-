@@ -85,8 +85,8 @@ Number and name of feature:
 
 Estimate of time needed to complete: 2 hours
 
-Start time: 2:30
+Start time: N/A
 
-Finish time: _____
+Finish time: Finished in code review
 
-Actual time needed to complete: _____
+Actual time needed to complete: Spent 2 hours on it and got most features working myself.
